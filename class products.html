@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body text="black" style="background-image:url(ear2.jpg)">
+    <h1 color="black" style="text-align:center ; font-size:50px"> Welcome to products class </h1>
+    <br /><br />
+    <center>
+        <form action="project (2).html">
+            <table>
+                <tr>
+                    <td>
+                        quant: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type=text id="quant">
+                        <br>
+                        <br>
+                    </td>
+                <tr>
+                <tr>
+                    <td>
+                        name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" id="name">
+                        <br>
+                        <br>
+                    </td>
+                <tr>
+                    <td>
+                        price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type=text id="price">
+                        <br>
+                        <br>
+                    </td>
+                <tr>
+                    <td>
+                        <a href="project (2).html">
+                            <input type=submit onclick="newproducts()" value="send">
+                        </a>
+                        <input type=reset value="clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <input type="text" id="n1" /><br /><br />
+        <input type="text" id="n2" /><br /><br />
+
+        <select id="operators">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="X">X</option>
+        </select>
+
+        <button onclick="calc();">=</button>
+        <input type="text" id="result" />
+    </center>
+    <script>
+
+        function calc() {
+            var n1 = parseFloat(document.getElementById('n1').value);
+            var n2 = parseFloat(document.getElementById('n2').value);
+
+            var oper = document.getElementById('operators').value;
+
+            if (oper === '+') {
+                document.getElementById('result').value = n1 + n2;
+            }
+
+            if (oper === '-') {
+                document.getElementById('result').value = n1 - n2;
+            }
+
+            if (oper === '/') {
+                document.getElementById('result').value = n1 / n2;
+            }
+
+            if (oper === 'X') {
+                document.getElementById('result').value = n1 * n2;
+            }
+        }
+
+    </script>
+    <script>
+
+        class products {
+
+            constructor(quant, name, price) {
+                this.quant = quant;
+                this.name = name;
+                this.price = price;
+            }
+            get getQuant() {
+                return this.quant;
+            }
+            get getName() {
+                return this.name;
+            }
+            get getPrice() {
+                return this.price;
+            }
+            set setQuant(quant) {
+                var check = /\b(0?[1-9]|1[0-9]|2[0])\b/;
+                if (check.test(quant))
+                    this.quant = quant;
+                else
+                    this.quant = undefined;
+            }
+            set setName(name) {
+                var check = /^[A-Za-z]{2,}$/;
+                if (check.test(name))
+                    this.name = name;
+                else
+                    this.name = undefined;
+            }
+            set setPrice(price) {
+                var check = /(1000|3000)/g;
+                if (check.test(price))
+                    this.price = price;
+                else
+                    this.price = undefined;
+            }
+
+            toString() {
+                return "quantity: " + this.quant + " " + " name: " + "   " + this.name + " " + " price:  " + this.price;
+            }
+        }
+
+        newproducts = () => {
+
+            product1 = new products();
+            var quant = document.getElementById("quant").value;
+            var name = document.getElementById("name").value;
+            var price = document.getElementById("price").value;
+            var value = quant * price;
+
+            product1.setQuant = quant;
+            product1.setName = name;
+            product1.setPrice = price;
+
+            alert(`the value is: ${value}`);
+
+            if (product1.getQuant == undefined)
+                alert('the quant is undefinded')
+            else
+                alert('good quantity')
+
+            if (product1.getName == undefined)
+                alert('the name is undefinded')
+            else
+                alert('good name')
+
+            if (product1.getPrice == undefined)
+                alert('the price is undefinded')
+            else
+                alert('good price')
+
+            alert(product1.toString());
+        }
+
+    </script>
+    <center>
+        <h1> You have donated an amount to charities  </h1>
+    </center>
+    <center>
+        <script>
+
+
+            function totalSum(...inp) {
+                var sum = 0;
+                for (i of inp) {
+                    sum += Math.ceil(i) - i;
+                }
+                return sum;
+            }
+
+            document.write("<font size=5 font color='black'>Sum(90.5)=" + totalSum(90.5) + "<br><br>");
+            document.write("<font size=5 font color='black'>Sum(90.5,90.5)=" + totalSum(90.5, 90.5) + "<br><br>");
+        </script>
+    </center>
+</body>
+</html>

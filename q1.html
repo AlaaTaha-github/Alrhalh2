@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body >
+    <h1> You have donated an amount to charities  </h1>
+    <center>
+    <script>
+        
+
+        function totalSum(...inp) {
+            var sum = 0; 
+            for (i of inp) {
+                sum += Math.ceil(i) - i;
+            }
+            return sum;
+        }
+        
+        document.write("<font size=5 font color='black'>Sum(90.5)=" + totalSum(90.5) + "<br><br>");
+        document.write("<font size=5 font color='black'>Sum(90.5,90.5)=" + totalSum(90.5, 90.5) + "<br><br>");
+    </script>
+    </center>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Congratulations, you got a discount! </h1>
+
+    <script>
+
+        var num = prompt("Enter a number 0-20");
+        while(num>20|| num <0){
+            num = prompt("Enter a number 0-20");
+        }
+
+        function Switch(num){
+            var r=num%10;
+            var l=num/10;
+            var num1=(r*10)+l;
+            var floor=num1-Math.floor(num1);
+
+            
+            return num1-floor;
+
+        }
+        
+        document.write(`Switch(num) ${Switch(num)}<br>
+        Switch(20) ${Switch(2)}<br>
+        Switch(2) ${Switch(20)}`);
+
+    </script>
+    
+</body>
+</html>

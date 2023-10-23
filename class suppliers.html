@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+      <body text="black" style="background-image:url(ear3.jpg)">
+    <h1 color="black" style="text-align:center ; font-size:50px"> Welcome to suppliers class </h1>
+    <br /><br />
+    <center>
+    <form action ="confirmation.htm">
+    <table>
+ <tr>
+  <td>
+ firstN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type=text id="firstN" >
+     <br>
+  <br>
+  </td>
+  <tr>
+       <tr>
+  <td>
+ lastN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="lastN">
+     <br>
+  <br>
+  </td>
+           <tr>
+  <td>
+ age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type=text id="age" >
+     <br>
+  <br>
+  </td>
+  <tr>
+  <td>
+      <a href="confirmation.htm">
+          <input type=submit onclick="checksupplier()" value="send">
+      </a>
+ <input type=reset value="clear">
+ </td>
+   </tr>
+  </table>
+   </form>
+    </center>
+          <script>
+
+    class supplier{
+
+    constructor(firstN, lastN, age) {
+    this.firstN = firstN;
+    this.lastN = lastN;
+    this.age = age;
+    }
+    get getFirstN() {
+        return this.firstN;
+    }
+    get getLastN() {
+        return this.lastN;
+    }
+    get getAge() {
+        return this.age;
+    }
+    set setFirstN(firstN) {
+             var check = /^[A-Za-z]{2,}$/;
+          if (check.test(firstN))
+                this.firstN = firstN;
+          else
+                this.firstN = undefined;
+        
+    }
+     set setLastN(lastN) {
+               this.lastN = lastN;
+                  }
+
+        set setAge(age) {
+            var check = /^(?:|1[8-9]|[2-9][0-9])$/;
+          if (check.test(age)==true)
+                this.age = age;
+          else
+                this.age = undefined;
+    }
+    toString() {
+        return "first name of supplier: " + this.firstN +" "+ " last name: " + this.lastN + " " + "age: " + this.age;
+    }
+}
+              function checksupplier() {
+                  supplier1 = new supplier();
+                  var firstN
+                  var lastN
+                  var age
+                  firstN = document.getElementById("firstN").value;
+                  supplier1.setFirstN = firstN;
+                  lastN = document.getElementById("lastN").value;
+                  supplier1.setLastN = lastN;
+                  age = document.getElementById("age").value;
+                  supplier1.setAge = age;
+                  if (supplier1.getFirstN == undefined)
+                      alert('the first name is undefinded')
+                  else
+                      alert('good first name')
+
+                  if (supplier1.getLastN == undefined)
+                      alert('the last name is undefinded')
+                  else
+                      alert('good last name')
+
+                  if (supplier1.getAge == undefined)
+                      alert('the age is undefinded')
+                  else
+                      alert('good age')
+                  alert(supplier1.toString());
+              }
+          </script>
+          
+</body>
+</html>

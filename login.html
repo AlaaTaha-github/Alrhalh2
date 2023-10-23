@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script language="javascript" type="text/javascript">
+        function isok(form) {
+            var passed = false;
+            if (form.fullname.value.length < 3) {
+                alert("יש להקליד שם תקין");
+            }
+            else if (form.password.value.length < 8) {
+                alert("יש להקליד סיסמא תקינה");
+            }
+            else if (form.password.value == /^[a-zA-Z]*$/) {
+                alert("יש להקליד סיסמא תקינה");
+                
+            }
+            else if (form.password.value.indexOf("@") == -1) {
+                alert("הסיסמא חייבת @");
+            }
+            else if (form.password.value.indexOf(".") == -1) {
+                alert("הסיסמא חייבת נקודה");
+            }
+            else {
+                passed = true;
+            }
+            return passed;
+        }
+    </script>
+    <title>
+        בדוק  תקינות הטופס
+    </title>
+</head>
+
+    <img id="nature" src="ear6.jpg" width="60" height="60">
+
+ <script>
+    let x = document.getElementById("nature");
+    x.addEventListener("mouseover", func);
+    function func() {
+        setInterval(function () {
+            if (x.width < 100) {
+                x.width = x.width + 55;
+                x.height = x.height + 25;
+            }
+        }, 1500);
+    }
+</script>
+
+<body text="black" style="background-image:url(ear4.jpg)">
+    <span id="clock" align="right"> &nbsp; </span>
+    <p style="color:#000000;font-size:15px;" id="timesPlace"> </p>
+
+    <h1 id="h1" color:#000000 ; style="text-align:center ; font-size:50px" onmousedown="mouseDown()" onmouseup="mouseUp()"> Welcome to ALRAHALH website </h1>
+    <br /><br />
+    <center>
+        <form name="tofes" action=" project (2).html" onSubmit="return isok(tofes);">
+            <table>
+                <tr>
+                    <td>
+                        name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type=text name=fullname>
+                        <br>
+                        <br>
+                    </td>
+                <tr>
+                <tr>
+                    <td>
+                        password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="password" name=password>
+                        <br>
+                        <br>
+                    </td>
+                <tr>
+                    <td>
+                        <a href="project (2).html">
+                            <input type=submit value="send">
+                        </a>
+                        <input type=reset value="clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+    <script>
+        function mouseDown() {
+            document.getElementById("h1").style.fontSize = "25px";
+        }
+        function mouseUp() {
+            document.getElementById("h1").style.color = "yellow";
+        }
+    </script>
+    <script>
+        function time() {
+            var today = new Date();
+
+            var display_val = today.getHours();
+
+            if (today.getMinutes() < 10) {
+                display_val += ":0" + today.getMinutes()
+            }
+            else {
+                display_val += ":" + today.getMinutes()
+            }
+
+            if (today.getSeconds() < 10) {
+                display_val += ":0" + today.getSeconds();
+            }
+            else {
+                display_val += ":" + today.getSeconds();
+            }
+
+            if (today.getHours() >= 12) {
+                display_val += " P.M.";
+            }
+            else {
+                display_val += " A.M.";
+            }
+
+            document.getElementById("timesPlace").innerHTML = display_val;
+        }
+        function start() {
+            setInterval("time()", 1000);
+        }
+        start();</script>
+</body>
+</html>

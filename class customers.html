@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+<script src="asench.js"></script>
+</head>
+      <body text="white" style="background-image:url(ear4.jpg)">
+    <h1 color="white" style="text-align:center ; font-size:50px"> Welcome to customers class </h1>
+    <br /><br />
+    <center>
+    <form action ="project (2).html">
+    <table>
+ <tr>
+  <td>
+ firstN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type=text id="firstN">
+     <br>
+  <br>
+  </td>
+  <tr>
+       <tr>
+  <td>
+ lastN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="lastN" >
+     <br>
+  <br>
+  </td>
+            <tr>
+  <td>
+ phone: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="phone" >
+     <br>
+  <br>
+  </td>
+           <tr>
+  <td>
+ age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type=text id="age" >
+     <br>
+  <br>
+  </td>
+  <tr>
+  <td>
+      <a href="Confirmation.htm">
+          <input type=submit onclick="checkcustomer()" value="send">
+      </a>
+ <input type=reset value="clear">
+ </td>
+   </tr>
+  </table>
+   </form>
+    </center>
+
+          <script>
+
+    class customers{
+
+    constructor(firstN, lastN,phone,age) {
+        this.firstN = firstN;
+        this.lastN = lastN;
+        this.phone = phone;
+        this.age = age;
+    }
+    get getFirstN() {
+        return this.firstN;
+    }
+    get getLastN() {
+        return this.lastN;
+    }
+    get getPhone() {
+        return this.phone;
+    }
+    get getAge() {
+        return this.age;
+    }
+    set setFirstN(firstN) {
+               var check = /^[A-Za-z]{2,}$/;
+            if (check.test(firstN))
+                this.firstN = firstN;
+           else
+                this.firstN = undefined;
+    }
+    set setLastN(lastN) {
+               this.lastN = lastN;
+    }
+        set setPhone(phone) {
+            var check =/^[0][5][0-9]{8}$/;
+            if (check.test(phone))
+                this.phone = phone;
+            else
+                this.phone = undefined;
+    }
+    set setAge(age) {
+              var check = /^(?:|1[8-9]|[2-9][0-9])$/;
+            if (check.test(age)==true)
+                this.age = age;
+            else
+                this.age = undefined;
+    }
+
+        toString() {
+            return "first name of supplier: " + this.firstN + " " + " last name: " + this.lastN + " " + " the phone is: " + this.phone + " " + "age: " + this.age;
+    }
+    }
+
+                  function checkcustomer() {
+                  customer1 = new customers();
+                  var firstN
+                  var lastN
+                  var phone
+                  var age
+                  firstN = document.getElementById("firstN").value;
+                  customer1.setFirstN = firstN;
+                  lastN = document.getElementById("lastN").value;
+                  customer1.setLastN = lastN;
+                      phone = document.getElementById("phone").value;
+                      customer1.setPhone = phone;
+                  age = document.getElementById("age").value;
+                  customer1.setAge = age;
+                  if (customer1.getFirstN == undefined)
+                  alert("the first name is undefinded")
+                  else
+                  alert('good first name')
+                  if (customer1.getLastN == undefined)
+                  alert('the last name is undefinded')
+                  else
+                  alert('good last name')
+                  if (customer1.getPhone == undefined)
+                   alert('the phone is undefinded')
+                  else
+                  alert('good phone')
+                  if (customer1.getAge == undefined)
+                  alert('the age is undefinded')
+                  else
+                  alert('good age')
+                  alert(customer1.toString());
+              }
+          </script>    
+</body>
+</html>

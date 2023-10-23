@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    <body >
+        <center>
+            <form name="f" onsubmit="check()">
+                <label>User name</label><br /><br />
+                <input name="name" type="text"><br><br>
+                <label>Password</label><br /><br />
+                <input name="pass" type="password">
+                <input type="submit" class="button">
+            </form>
+        </center>
+
+        <script>
+              function check() {
+                x = document.forms["f"]["name"].value;
+                y = document.forms["f"]["pass"].value;
+                var z, z2
+                if (x == "alaa" && y == "alaa1234") {
+                    z = window.open('project (2).html', "_blank", "width=100,height=100");
+                }
+                else {
+                   z2 = window.open('false.html', "_blank", "width=200,height=100");
+                    z2.setTimeout("window.close()", 2000)
+                    window.close("");
+                }
+            }
+        </script>
+
+
+
+    </body>
+</html>
